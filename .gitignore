@@ -1,0 +1,20 @@
+# 1. Dependencies
+node_modules/
+venv/
+env/
+__pycache__/
+
+# 2. Generated Audio Files (Don't upload these!)
+# This covers output.wav, mic.wav, and system.wav in ALL folders
+*.wav
+*.mp3
+*.m4a
+
+# 3. System & IDE Junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# 4. Logs and temporary files
+*.log
+npm-debug.log*
