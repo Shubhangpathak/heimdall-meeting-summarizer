@@ -1,14 +1,21 @@
 from faster_whisper import WhisperModel
-import time
+from datetime import datetime
 
 # audio_file = "./sound-recorder/output.wav"
-audio_file = "./output.wav"
+audio_file = "./sound-recorder/output.wav"
+output_file = "./meeting.txt"
 
 print("Transcribing...")
 model = WhisperModel("base", device="cpu", compute_type="int8")
 
 segments, info = model.transcribe(audio_file, beam_size=5)
 
-for segment in segments:
-    print(f"[{segment.start:.2f}s -> {segment.end:.2f}s] {segment.text}")
+with open("transcription.txt", "a", encoding="utf-8") as f:
+        for segment in segments:
+             text = segment.text.strip()
+             if text:
+                  f.write(f" {text} \n")
+
+# for segment in segments:
+#     print(f"[{segment.start:.2f}s -> {segment.end:.2f}s] {segment.text}")
 print("Done! Sucessfully")
