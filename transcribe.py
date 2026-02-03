@@ -11,7 +11,7 @@ model = WhisperModel("base", device="cpu", compute_type="int8")
 segments, info = model.transcribe(audio_file, beam_size=5)
 
 with open("transcription.txt", "a", encoding="utf-8") as f:
-        for segment in segments:
+        for segment in segments:    
              text = segment.text.strip()
              if text:
                   f.write(f" {text} \n")

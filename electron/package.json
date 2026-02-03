@@ -1,0 +1,15 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "app to make notes of meeting ",
+  "license": "ISC",
+  "author": "shubhang",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "devDependencies": {
+    "electron": "^40.1.0"
+  }
+}
